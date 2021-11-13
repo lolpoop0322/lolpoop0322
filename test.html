@@ -6,10 +6,10 @@
     var ms = 0;
     button.onclick = function(){
       if (button.innerText == "Start") {
-        button.innerText = "Stop";
         ms = Date.now();
+        button.innerText = "Stop";
       } else {
-        wpm.innerText = "Your WPM: "+(text.innerText.split().length)/((Date.now()-ms)/60000)
+        wpm.innerText = "Your WPM: "+Math.round((text.value.split(" ").length)/((Date.now()-ms)/60000))
         button.innerText = "Start";
       }
     }
