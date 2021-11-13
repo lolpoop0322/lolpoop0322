@@ -1,0 +1,21 @@
+<script>
+  window.onload = function(){
+    var text = document.getElementById("text");
+    var button = document.getElementById("button");
+    var wpm = document.getElementById("wpm");
+    var ms = 0;
+    button.onclick = function(){
+      if (button.innerText == "Start") {
+        button.innerText = "Stop";
+        ms = Date.now();
+      } else {
+        wpm.innerText = "Your WPM: "+(text.innerText.split().length)/((Date.now()-ms)/60000)
+        button.innerText = "Start";
+      }
+    }
+  }
+</script>
+<body>
+  <textarea id="text" rows="40" cols="100"></textarea><br>
+  <p id="wpm">Your WPM:</p><button id="button">Start</button>
+</body>
